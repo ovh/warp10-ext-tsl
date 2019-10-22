@@ -1,0 +1,52 @@
+// this is a function documentation. Documentation of WarpScript is in WarpScript.
+<%
+  {
+    'name' 'TSL'
+    'since' '2.2.0'
+    'deprecated' ''
+    'deleted' ''
+    'version' 'all'
+    'tags' [ 'extensions' ]
+    'desc'
+<'
+TSL convert a TSL query into WarpScript and execute it on the current Warp 10 instance
+@MODULE_DESCRIPTION@
+
+'>
+
+    'sig' [
+      [ [ 'tslQuery:STRING' 'token:STRING' ]  [ 'data:LIST<GTS>' ] ]
+    ]
+
+    //
+    // this sections describes each parameters of the TSL function signature.
+    //
+
+    'params' {
+        'tslQuery' 'A tsl query based on https://github.com/ovh/tsl/blob/master/spec/doc.md'
+        'token' 'A Warp 10 application read token'
+
+    }
+
+    'related' [ ]
+
+
+    // Examples of your function use. Their could be several examples in the list.
+    'examples' [
+<'
+// Example 1
+''
+'create(series("test"))'
+TSL
+'>
+    ]
+
+    // if your extension needs more configurations, add the configuration keys in this list:
+    'conf' [ 'warpscript.tsl.libso.path' 'warpscript.tsl.error.prefix' ]
+    // your also need to add and document these configuration in your @MODULE_GROUP@-@MODULE_ARTIFACT@.conf file
+
+    'ext' '@MODULE_GROUP@.PleaseRenameWarpScriptExtension'
+
+  } INFO
+  
+%>

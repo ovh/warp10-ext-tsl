@@ -1,0 +1,16 @@
+{
+  "type": "ext",
+  "group": "io.ovh",
+  "artifact": "tslToWarpScript",
+  "version": "0.0.1",
+  "description": "Extension to load TSL as a WarpScprit function",
+  "author": "Aurélien Hébert",
+  "email": "aurelien.hebert@ovh.corp.com",
+  "license": "BSD 3-Clause license",
+  "git": "nogit",
+  "repoUrl": "none",
+  "tags": [
+    "tsl",
+    "query"
+  ]
+}
