@@ -32,10 +32,12 @@ Build the TSL jar and add it as an extension
 warpscript.extensions = io.ovh.metrics.warp10.script.ext.tsl.TSLWarpScriptExtension
 ```
 
+You will need to have the TSL C libraries. They can be compiled from the [TSL project](https://github.com/ovh/tsl/). As an example, the debian and mac so libraries for TSL version 0.0.5 are available in the [first release of this extension](https://github.com/ovh/warp10-ext-tsl/releases/tag/0.0.1).
+
 ### Config
 
 The **Tsl** extension expects to find the tsl.so library.
-First you need to build a TSL.so adapted to [your system](https://github.com/ovh/tsl/).
+First you need to build a TSL.so adapted to [your system](https://github.com/ovh/tsl/#build-tsl-so-file-to-use-tsl-in-other-language).
 Then you can set in the Warp10 config file the path to find the tsl.so lib.
 
 ```yaml
