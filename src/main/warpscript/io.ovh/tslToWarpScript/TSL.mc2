@@ -9,9 +9,7 @@
     'tags' [ 'extensions' ]
     'desc'
 <'
-TSL convert a TSL query into WarpScript and execute it on the current Warp 10 instance
-@MODULE_DESCRIPTION@
-
+TSL convert a TSL query into WarpScript and execute it on the current Warp 10 instance.
 '>
 
     'sig' [
