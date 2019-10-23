@@ -46,9 +46,9 @@ def getVersionName(String revision) {
 // bintrayApiKey = The bintray API key
 //
 
-project.ext.bintrayRepo = '@BINTRAYREPO#'
-project.ext.bintrayVcsUrl = '@VCSURL@'
-project.ext.bintrayLicenses = [ '@LICENSE@' ]
+project.ext.bintrayRepo = 'Warp10-ext-tsl'
+project.ext.bintrayVcsUrl = 'https://github.com/ovh/warp10-ext-tsl'
+project.ext.bintrayLicenses = [ 'BSD 3-Clause' ]
 
 //
 // GnuPG configuration for signing module
