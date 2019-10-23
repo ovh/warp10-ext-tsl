@@ -3,7 +3,7 @@
   "group": "io.ovh",
   "artifact": "tslToWarpScript",
   "version": "0.0.1-uberjar",
-  "description": "Extension to load TSL as a WarpScprit function",
+  "description": "Extension to load TSL as a WarpScript function",
   "author": "Aurélien Hébert",
   "email": "aurelien.hebert@ovh.corp.com",
   "license": "BSD 3-Clause license",
