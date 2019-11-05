@@ -249,16 +249,3 @@ bintray {
     }
   }
 }
-
-
-//
-// Artifact Signing
-//
-
-signing {
-  if (null == System.getProperty("nosign")) {
-    useGpgCmd()
-    sign publishing.publications.uberjar
-    sign publishing.publications.stdjar
-  }
-}
