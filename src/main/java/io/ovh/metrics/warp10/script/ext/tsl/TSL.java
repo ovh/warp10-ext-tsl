@@ -4,6 +4,8 @@ import io.warp10.WarpConfig;
 import io.warp10.script.*;
 import io.warp10.script.functions.EVAL;
 
+import java.util.ArrayList;
+
 public class TSL extends NamedWarpScriptFunction implements WarpScriptStackFunction {
 
   private static final String TSL_ERROR_PREFIX = "warpscript.tsl.error.prefix";
@@ -43,13 +45,19 @@ public class TSL extends NamedWarpScriptFunction implements WarpScriptStackFunct
 
     String token = (String) o;
 
-    String warpScript = this.tslGenerator.GenerateWarpScript(token,
-            tslScript, false);
+    ArrayList<String> symbols = new ArrayList<String>();
 
+    symbols.addAll(stack.getSymbolTable().keySet());
+
+    String warpScript = this.tslGenerator.GenerateWarpScript(token,
+            tslScript, false, symbols);
 
     if (warpScript.startsWith(this.errorPrefix)) {
       throw new WarpScriptException(getName() + " " + warpScript);
     }
+
+    warpScript = "SAVE 'context' STORE\n" + warpScript;
+    warpScript += "\n$context RESTORE\n";
 
     stack.push(warpScript);
     EVAL eval = new EVAL(WarpScriptLib.EVAL);

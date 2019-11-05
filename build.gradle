@@ -97,7 +97,7 @@ configurations {
 dependencies {
   //compile group: 'net.java.dev.jna', name: 'jna', version: '5.4.0'
 
-  provided 'net.java.dev.jna:jna:+'
+  compile 'net.java.dev.jna:jna:+'
 
   provided 'io.warp10:warpscript:+'
 
