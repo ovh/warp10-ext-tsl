@@ -30,11 +30,12 @@ public class TSLGenerator {
         }
 
         // Foreign functions
-        public GoString.ByValue TslToWarpScript(GoString.ByValue tslQuery, GoString.ByValue token, Boolean allowAuthenticate, long lineStart, GoString.ByValue defaultTimeRange, GoString.ByValue defaultSamplers);
+        public GoString.ByValue TslToWarpScript(GoString.ByValue tslQuery, GoString.ByValue token, Boolean allowAuthenticate, long lineStart,
+                                                GoString.ByValue defaultTimeRange, GoString.ByValue defaultSamplers, GoString.ByValue tslVariables);
     }
 
 
-    public String GenerateWarpScript(String token, String tslScript, Boolean allowAuthenticate) {
+    public String GenerateWarpScript(String token, String tslScript, Boolean allowAuthenticate, List<String> variables) {
 
         TSLscript.GoString.ByValue tslQuery = new TSLscript.GoString.ByValue();
         tslQuery.p = tslScript;
@@ -52,7 +53,11 @@ public class TSLGenerator {
         defaultSamplers.p = "";
         defaultSamplers.n = defaultSamplers.p.length();
 
-        TSLscript.GoString val = this.tslSO.TslToWarpScript(tslQuery, tslToken, allowAuthenticate, 0, defaultTimeRange, defaultSamplers);
+        TSLscript.GoString.ByValue tslVariables = new TSLscript.GoString.ByValue();
+        tslVariables.p = String.join(",", variables);
+        tslVariables.n = tslVariables.p.length();
+
+        TSLscript.GoString val = this.tslSO.TslToWarpScript(tslQuery, tslToken, allowAuthenticate, 0, defaultTimeRange, defaultSamplers, tslVariables);
         return val.p;
     }
 }
