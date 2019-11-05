@@ -61,7 +61,7 @@ project.ext.bintrayLicenses = [ 'BSD 3-Clause' ]
 project.ext.group = 'io.ovh'
 project.ext.name = 'tslToWarpScript'
 project.ext.uberjar = null != System.getProperty('uberjar')
-project.ext.version = getVersionName('0.0.1') + (project.ext.uberjar ? '-uberjar' : '')
+project.ext.version = getVersionName('0.0.2') + (project.ext.uberjar ? '-uberjar' : '')
 
 version project.ext.version
 
