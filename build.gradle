@@ -187,6 +187,10 @@ task javadocJar(type: Jar) {
   classifier = 'javadoc'
 }
 
+task wrapper(type: Wrapper) {
+  gradleVersion = '5.5'
+}
+
 javadocJar.dependsOn(javadoc)
 
 publishing {
